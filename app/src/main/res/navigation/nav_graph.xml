@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/productListFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.shokal.roomdatabasewithmultipletable.fragments.ProductListFragment"
+        android:label="Product List"
+        tools:layout="@layout/fragment_product_list" >
+        <action
+            android:id="@+id/action_productListFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_productUpdateFragment"
+            app:destination="@id/productUpdateFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_categoryListFragment"
+            app:destination="@id/categoryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.shokal.roomdatabasewithmultipletable.fragments.CategoryListFragment"
+        android:label="Category List"
+        tools:layout="@layout/fragment_category_list" >
+        <action
+            android:id="@+id/action_categoryListFragment_to_addCategoryFragment"
+            app:destination="@id/addCategoryFragment" />
+        <action
+            android:id="@+id/action_categoryListFragment_to_categoryUpdateFragment"
+            app:destination="@id/categoryUpdateFragment" />
+        <action
+            android:id="@+id/action_categoryListFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_categoryListFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCategoryFragment"
+        android:name="com.shokal.roomdatabasewithmultipletable.fragments.AddCategoryFragment"
+        android:label="Add Category"
+        tools:layout="@layout/fragment_add_category" >
+        <action
+            android:id="@+id/action_addCategoryFragment_to_categoryListFragment"
+            app:destination="@id/categoryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.shokal.roomdatabasewithmultipletable.fragments.AddProductFragment"
+        android:label="Add Product"
+        tools:layout="@layout/fragment_add_product" >
+        <action
+            android:id="@+id/action_addProductFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+        <action
+            android:id="@+id/action_addProductFragment_to_categoryListFragment"
+            app:destination="@id/categoryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryUpdateFragment"
+        android:name="com.shokal.roomdatabasewithmultipletable.fragments.CategoryUpdateFragment"
+        android:label="Update Category"
+        tools:layout="@layout/fragment_category_update" >
+        <action
+            android:id="@+id/action_categoryUpdateFragment_to_categoryListFragment"
+            app:destination="@id/categoryListFragment" />
+        <argument
+            android:name="category"
+            app:argType="com.shokal.roomdatabasewithmultipletable.models.Category" />
+    </fragment>
+    <fragment
+        android:id="@+id/productUpdateFragment"
+        android:name="com.shokal.roomdatabasewithmultipletable.fragments.ProductUpdateFragment"
+        android:label="Update Product"
+        tools:layout="@layout/fragment_product_update" >
+        <action
+            android:id="@+id/action_productUpdateFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+        <argument
+            android:name="product"
+            app:argType="com.shokal.roomdatabasewithmultipletable.models.Product" />
+    </fragment>
+</navigation>
