@@ -12,6 +12,10 @@ class Repository(context: Context) {
         return db.getAllCategory()
     }
 
+    suspend fun getAllCategoryName(): List<String> {
+        return db.getAllCAtegoryName()
+    }
+
     suspend fun insertCategory(category: Category) {
         return db.insertCategory(category)
     }

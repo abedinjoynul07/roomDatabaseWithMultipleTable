@@ -40,7 +40,7 @@ class CategoryListFragment : Fragment() {
 
 
 
-    private fun initializeAdapter() {
+    fun initializeAdapter() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         observeData()
     }

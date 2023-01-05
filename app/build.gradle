@@ -21,7 +21,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "DATABASE_NAME", "pms"
+        }
         release {
+            buildConfigField "String", "DATABASE_NAME", "pms"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

@@ -61,9 +61,6 @@ class ProductAdpater (
     }
 
     override fun getItemCount(): Int {
-        if (arrayList.size == 0) {
-            Toast.makeText(context, "Product list is empty", Toast.LENGTH_SHORT).show()
-        }
         return arrayList.size
     }
 }

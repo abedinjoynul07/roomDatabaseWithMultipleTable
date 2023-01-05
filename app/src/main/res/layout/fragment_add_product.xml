@@ -100,29 +100,33 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linear_layout"
-        android:gravity = "center"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_textInputLayout">
+
         <TextView
-            android:id="@+id/txtView"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_height="wrap_content"
-            android:text="Select Category:"
-            android:textSize = "20sp" />
+            android:text="Select Category.."
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/categorySpinner"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/txtView"/>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="2" />
     </LinearLayout>
 
     <Button

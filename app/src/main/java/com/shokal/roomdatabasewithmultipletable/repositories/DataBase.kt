@@ -3,10 +3,13 @@ package com.shokal.roomdatabasewithmultipletable.repositories
 import android.content.Context
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteOpenHelper
+import com.shokal.roomdatabasewithmultipletable.adapters.Converter
 import com.shokal.roomdatabasewithmultipletable.models.Category
 import com.shokal.roomdatabasewithmultipletable.models.Product
+import de.hdodenhof.circleimageview.BuildConfig
 
-@Database(entities = [Category::class, Product::class], version = 2)
+@Database(entities = [Category::class, Product::class], version = 3)
+@TypeConverters(Converter::class)
 abstract class DataBase : RoomDatabase() {
     abstract fun universalDao() : DataAccessObject
 

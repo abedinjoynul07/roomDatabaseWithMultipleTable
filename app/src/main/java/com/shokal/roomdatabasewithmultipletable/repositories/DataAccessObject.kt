@@ -15,6 +15,9 @@ interface DataAccessObject {
     @Query("SELECT * FROM categories")
     fun getAllCategory(): LiveData<List<Category>>
 
+    @Query("SELECT name FROM categories")
+    suspend fun getAllCAtegoryName() : List<String>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertCategory(category: Category)
 

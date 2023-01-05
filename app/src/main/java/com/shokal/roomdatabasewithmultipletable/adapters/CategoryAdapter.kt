@@ -57,9 +57,6 @@ class CategoryAdapter(
     }
 
     override fun getItemCount(): Int {
-        if (arrayList.size == 0) {
-            Toast.makeText(context, "Category list is empty", Toast.LENGTH_SHORT).show()
-        }
         return arrayList.size
     }
 }

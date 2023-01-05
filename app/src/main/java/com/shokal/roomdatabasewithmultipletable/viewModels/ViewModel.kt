@@ -8,13 +8,13 @@ import com.shokal.roomdatabasewithmultipletable.models.Category
 import com.shokal.roomdatabasewithmultipletable.models.Product
 import com.shokal.roomdatabasewithmultipletable.repositories.Repository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class ViewModel(application: Application): AndroidViewModel(application) {
     var categoryList: LiveData<List<Category>>
     var productList : LiveData<List<Product>>
     private var repository : Repository
-
     init {
         repository = Repository(application)
         categoryList = repository.getAllCategory()
